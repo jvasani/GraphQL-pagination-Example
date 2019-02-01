@@ -1,0 +1,31 @@
+
+<!doctype html>
+<html>
+    <head>
+    <title>Google Technical Challenge</title>
+    
+    </head>
+    <body>
+    <div align='center'>
+    <h1>Google Technical Challenge</h1>
+    
+      <table border="1">
+        <thead><tr><th>Employee Name</th><th>Hired on</th><th>department</th></tr></thead>
+         {% for element in data %}
+        <tbody>
+
+        <tr>
+            <td>{{ loop.index + (page - 1) * 10 }}</td>
+          <td>{{ element.name}}</td>
+          <td>{{ element.hired_on}}</td> 
+          <td>{{ element.department.name}}</td> 
+        </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {{ pagination.info }} {{ pagination.links }}
+
+  <a href = "/">Go back to home page</a>
+      
+   </body>
+</html>    
